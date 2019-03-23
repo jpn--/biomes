@@ -91,7 +91,7 @@ dependencies:
 # Jupyter and IPython
 - ipykernel>=5.1
 - nb_conda>=2.2.1
-- jupyter_contrib_nbextensions>=0.4.0   # on conda-forge only
+# jupyter_contrib_nbextensions>=0.4.0   # on conda-forge only
 - jupyterlab>=0.35.3
 - notebook>=5.7.2
 - conda-forge::nodejs
