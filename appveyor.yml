@@ -48,20 +48,21 @@ install:
   - conda update -q conda
   # Show conda info for debugging
   - conda info -a
-  - "%CMD_IN_ENV% conda env create -f=taiga.yml"
+  - conda env create -f=taiga.yml
 
 build: off
 
 test_script:
   - echo "begin test"
-  - '"%CONDA%\Scripts\activate.bat"'
-  - python tools\\gitversion.py
-  # Build the package
-  - "%CMD_IN_ENV% conda build conda-recipe"
+  # - '"%CONDA%\Scripts\activate.bat"'
+
+  - conda activate taiga
+  - pytest --pyargs larch -v
+  - pytest --pyargs geopandas --ignore-glob='*/test_geodataframe.py' --ignore-glob='*/test_overlay.py'
 
   # Run the tests outside the source tree.
-  - pushd "%HOMEPATH%" && (conda activate taiga & pytest --pyargs larch -v & popd)
-  - pushd "%HOMEPATH%" && (conda activate taiga & pytest --pyargs geopandas --ignore-glob='*/test_geodataframe.py' --ignore-glob='*/test_overlay.py' & popd)
+  #- pushd "%HOMEPATH%" && (conda activate taiga & pytest --pyargs larch -v & popd)
+  #- pushd "%HOMEPATH%" && (conda activate taiga & pytest --pyargs geopandas --ignore-glob='*/test_geodataframe.py' --ignore-glob='*/test_overlay.py' & popd)
 
 
 on_success:
