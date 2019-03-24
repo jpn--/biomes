@@ -44,13 +44,13 @@ install:
 
   # Load the conda root environment, configure and install some packages
   - '"%CONDA%\Scripts\activate.bat"'
+
+  # Fix error with juntion points, see https://github.com/appveyor/ci/issues/2270
+  - "set PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
+
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  
-  # Fix error with juntion points, see https://github.com/appveyor/ci/issues/2270
-  - mklink /J C:\Miniconda3 C:\Miniconda37
-  - mklink /J C:\Miniconda3-x64 C:\Miniconda37-x64
-  
+    
   # Show conda info for debugging
   - conda info -a
   - conda env create -f=taiga.yml
