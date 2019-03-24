@@ -62,6 +62,7 @@ test_script:
   # - '"%CONDA%\Scripts\activate.bat"'
 
   - activate taiga
+  - "set PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
   - conda list
   - pytest --pyargs larch -v
   - pytest --pyargs geopandas --ignore-glob='*/test_geodataframe.py' --ignore-glob='*/test_overlay.py'
