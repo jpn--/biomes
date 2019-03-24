@@ -61,7 +61,7 @@ test_script:
   - echo "begin test"
   # - '"%CONDA%\Scripts\activate.bat"'
 
-  - conda activate taiga
+  - activate taiga
   - conda list
   - pytest --pyargs larch -v
   - pytest --pyargs geopandas --ignore-glob='*/test_geodataframe.py' --ignore-glob='*/test_overlay.py'
