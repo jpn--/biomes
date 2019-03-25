@@ -64,8 +64,9 @@ test_script:
   - activate taiga
   - "set PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
   - conda list
+  - pytest test_taiga.py
   - pytest --pyargs larch -v
-  - pytest --pyargs geopandas --ignore=tests/test_geodataframe.py --ignore=tests/test_overlay.py
+  #- pytest --pyargs geopandas --ignore=tests/test_geodataframe.py --ignore=tests/test_overlay.py
 
   # Run the tests outside the source tree.
   #- pushd "%HOMEPATH%" && (conda activate taiga & pytest --pyargs larch -v & popd)
