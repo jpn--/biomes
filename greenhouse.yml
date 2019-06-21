@@ -44,6 +44,7 @@ dependencies:
 - sphinx_rtd_theme
 - jpn::guzzle_sphinx_theme
 - nbsphinx
+- numpydoc
 
 # YAML Processing
 - jpn::yamllint>=1.11
