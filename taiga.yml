@@ -89,7 +89,7 @@ dependencies:
 - nodejs
 
 # Choice Modeling
-- jpn::larch>=5.1
+- larch>=5.1
 
 # Testing
 - pytest>=4.0.1
