@@ -1,6 +1,6 @@
 
 # To use this file::
-#  conda env create -f taiga-2019-11.yml
+#  conda env create -f taiga.yml
 name: taiga
 
 channels:
