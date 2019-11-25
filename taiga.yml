@@ -1,7 +1,7 @@
 
 # To use this file::
 #  conda env create -f taiga-2019-11.yml
-name: taiga11
+name: taiga
 
 channels:
 - conda-forge
@@ -96,10 +96,9 @@ dependencies:
 - nbval>=0.9.1
 
 # Machine Learning Tools
-- xgboost
-- keras
-#- pip:
-#  - plaidml-keras
+- pip:
+  - xgboost
+  - plaidml-keras
 
 ### PlaidML
 #
