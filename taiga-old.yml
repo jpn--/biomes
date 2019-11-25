@@ -1,37 +1,46 @@
 
 # To use this file::
-#  conda env create -f taiga-2019-11.yml
-name: taiga11
+#  conda env create -f taiga.yml
+name: taiga
 
 channels:
 - conda-forge
-- defaults
 - plotly
+- jpn
+- defaults
 
 dependencies:
 - python=3.7
 - pip
 
 # Security
-- openssl
-- certifi
-- ca-certificates
+- defaults::openssl
+- defaults::certifi
+- defaults::ca-certificates
 
 # Math
-- numpy>=1.16
-- pandas>=0.23.4
-- scipy>=1.2
-- scikit-learn>=0.20.1
+- defaults::numpy>=1.16
+- defaults::numpy-base
+- defaults::mkl
+- defaults::mkl_fft
+- defaults::mkl_random
+- defaults::blas
+- defaults::intel-openmp
+- defaults::pandas>=0.23.4
+- defaults::scipy>=1.2
+- defaults::scikit-learn>=0.20.1
 - networkx>=2.2
+- jpn::ghalton>=0.6.1
 
 # Documentation
 - sphinx>=1.8.2
+- sphinxcontrib>=1.0
 - pygments>=2.2.0
 - docutils>=0.14
 
 # YAML Processing
-- yamllint>=1.11
-- pathspec>=0.5.9
+- jpn::yamllint>=1.11
+- jpn::pathspec>=0.5.9
 
 # Data Storage and File Management
 - pytables=3.4.4
@@ -40,31 +49,31 @@ dependencies:
 - appdirs>=1.4.3
 
 # Visualization
-- matplotlib>=3.1
+- matplotlib>=3.0.1
 - seaborn>=0.9
 - pydot
-- graphviz
-- plotly>=4.3
+- graphviz>=2.38
+- plotly>=3.2.1
 - plotly::plotly-orca  # Plotly Static Image Export
 
 # Mapping
-- fiona>=1.7.11
-- gdal>=2.2.4
-- geopandas>=0.6.2
-- krb5>=1.16
-- shapely>=1.6.4
-- osmnx>=0.9
-- contextily
-- libiconv
+- conda-forge::fiona>=1.7.11
+- conda-forge::gdal>=2.2.4
+- conda-forge::geopandas>=0.4
+- conda-forge::krb5>=1.16
+- conda-forge::shapely>=1.6.4
+- conda-forge::osmnx>=0.9
+- conda-forge::contextily
+- conda-forge::libiconv
 
 # User Interface
 - tqdm
 - ipywidgets>=7.2
 
 # Parallel Processing
-- joblib>=0.14
-- dask>=2.8
-- distributed>=2.8
+- joblib>=0.13.2
+- dask>=1.0
+- distributed>=1.25
 - cloudpickle>=0.6.1
 
 # MS Word Compatibility
@@ -78,17 +87,19 @@ dependencies:
 # HTML Compatibility
 - beautifulsoup4>=4.6
 - jinja2>=2.9.6  # for pandas styler
-- xmle
+- jpn::xmle
 
 # Jupyter and IPython
 - ipykernel>=5.1
 - nb_conda>=2.2.1
-- jupyter_contrib_nbextensions>=0.4.0  
-- jupyterlab>=1.2
+# jupyter_contrib_nbextensions>=0.4.0   # on conda-forge only
+- jupyterlab>=0.35.3
 - notebook>=5.7.2
-- nodejs
+- conda-forge::nodejs
 
 # Choice Modeling
+- jpn::filez
+- jpn::addict_yaml
 - jpn::larch>=5.1
 
 # Testing
@@ -96,10 +107,9 @@ dependencies:
 - nbval>=0.9.1
 
 # Machine Learning Tools
-- xgboost
-- keras
-#- pip:
-#  - plaidml-keras
+- pip:
+  - plaidml-keras
+  - xgboost
 
 ### PlaidML
 #
