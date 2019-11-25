@@ -14,6 +14,7 @@ channels:
 
 dependencies:
 - python=3.7
+- pip
 
 # Security
 - defaults::openssl
@@ -95,6 +96,9 @@ dependencies:
 
 # Testing
 - pytest>=4.0.1
+
+- pip:
+  - transportation_tutorials
 
 
 
