@@ -154,6 +154,7 @@ dependencies:
 # jupyter labextension install @jupyterlab/geojson-extension --no-build
 # jupyter labextension install @jupyterlab/mathjax3-extension --no-build
 # jupyter labextension install plotlywidget@0.4.0 --no-build
+# jupyter labextension install jupyterlab-plotly --no-build
 # jupyter lab build
 #
 # Avoid "JavaScript heap out of memory" errors during extension installation::
