@@ -17,6 +17,5 @@ def test_imports():
 	import distributed
 	import cloudpickle
 	import xmle
-	import filez
-	import addict_yaml
+	import addict
 

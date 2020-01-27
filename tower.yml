@@ -7,17 +7,18 @@ channels:
 - conda-forge
 
 dependencies:
-- python=3.6
+- python=3.7
 
 # Jupyter and IPython
 - conda-forge::ipykernel>=5.1
 - conda-forge::ipywidgets>=7.2
 - conda-forge::nb_conda>=2.2.1
+- conda-forge::nb_conda_kernels
 - conda-forge::jupyter_contrib_nbextensions>=0.4.0   # on conda-forge only
 - conda-forge::jupyterlab>=0.35.3
 - conda-forge::notebook>=5.7.2
 - conda-forge::nodejs
-
+- conda-forge::jupytext
 
 
 # After setting up and activating this environment, register with jupyter-notebook::
