@@ -1,0 +1,156 @@
+
+# To use this file::
+#  conda env create -f runway37.yml
+# or::
+#  conda env update -f runway37.yml --prune
+
+name: runway37
+
+channels:
+- conda-forge
+- plotly
+- tmip
+
+dependencies:
+- python=3.7
+- pip
+
+- cython
+- bumpversion
+
+# Security
+- openssl
+- certifi
+- ca-certificates
+
+# Math
+- numpy
+- pandas
+- scipy
+- scikit-learn
+- networkx>=2.2
+- statsmodels
+
+# Documentation
+- sphinx
+- sphinxcontrib>=1.0
+- pygments>=2.2.0
+- docutils>=0.14
+- sphinx_rtd_theme
+- nbsphinx
+- numpydoc
+
+# YAML Processing
+- yamllint
+
+# Data Storage and File Management
+- pytables
+- h5py
+- hdf5
+- appdirs
+
+# Visualization
+- matplotlib
+- seaborn
+- pydot
+- graphviz
+- plotly
+- plotly::plotly-orca  # Plotly Static Image Export
+
+# Mapping
+- fiona
+- gdal
+- geopandas>=0.6
+- krb5
+- shapely
+- osmnx
+- contextily>=1.0rc2
+- libiconv
+
+# User Interface
+- tqdm
+- ipywidgets
+
+# Parallel Processing
+- joblib
+- dask
+- distributed
+- cloudpickle
+
+# MS Word Compatibility
+- python-docx
+
+# MS Excel Compatibility
+- openpyxl
+- xlrd
+- xlsxwriter
+
+# HTML Compatibility
+- beautifulsoup4
+- jinja2  # for pandas styler
+- xmle
+
+# Jupyter and IPython
+- ipykernel
+- nb_conda
+- jupyter_contrib_nbextensions   # on conda-forge only
+- jupyterlab
+- notebook
+- nodejs
+- jupytext
+
+## Choice Modeling
+## develop::filez
+- addict
+- larch
+#
+## Testing
+- pytest
+- nbval
+#
+## Exploratory Modeling
+- tmip::emat
+- tmip::ema_workbench
+- salib
+
+## Pip
+- pip:
+  - xgboost
+  - mapped
+  - transportation-tutorials
+
+
+
+
+# After setting up and activating this environment, register with jupyter-notebook::
+#   python -m ipykernel install --user --name $CONDA_DEFAULT_ENV --display-name "$CONDA_DEFAULT_ENV"
+#
+# These may also be of interest for jupyter lab users:
+#
+# Avoid "JavaScript heap out of memory" errors during extension installation::
+#   # (OS X/Linux)
+#   export NODE_OPTIONS=--max-old-space-size=4096
+#   # (Windows)
+#   set NODE_OPTIONS=--max-old-space-size=4096
+#
+# jupyter labextension install @jupyterlab/toc --no-build
+# jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build
+# jupyter labextension install jupyterlab_bokeh --no-build
+# jupyter labextension install @jupyterlab/plotly-extension --no-build
+# jupyter labextension install @jupyterlab/geojson-extension --no-build
+# jupyter labextension install @jupyterlab/mathjax3-extension --no-build
+# jupyter labextension install plotlywidget --no-build
+# jupyter lab build
+#
+# Avoid "JavaScript heap out of memory" errors during extension installation::
+#   # (OS X/Linux)
+#   export NODE_OPTIONS=--max-old-space-size=4096
+#   # (Windows)
+#   set NODE_OPTIONS=--max-old-space-size=4096
+
+
+# These are not yet compatible...
+# jupyter labextension install jupyterlab_voyager
+
+
+
