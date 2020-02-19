@@ -1,0 +1,38 @@
+
+# To use this file::
+#  conda env create -f docbuilder.yml
+name: docbuilder
+
+channels:
+- conda-forge
+- jpn
+
+dependencies:
+- python=3.7
+- pip
+- bumpversion
+- sphinx #<=1.8.5
+- sphinxcontrib>=1.0
+- pygments>=2.2.0
+- docutils>=0.14
+- sphinx_rtd_theme
+- jpn::guzzle_sphinx_theme
+- nbsphinx
+- numpydoc
+- recommonmark
+
+# YAML Processing
+- yamllint>=1.11
+
+# Data Storage and File Management
+- appdirs>=1.4.3
+
+# Visualization
+- matplotlib>=3.0.1
+- seaborn>=0.9
+- pydot
+- graphviz>=2.38
+- plotly>=3.2.1
+
+- ipython
+

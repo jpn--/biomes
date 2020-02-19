@@ -102,7 +102,7 @@ dependencies:
 ## Choice Modeling
 ## develop::filez
 - addict
-- larch
+- larch>=5.3.1
 #
 ## Testing
 - pytest

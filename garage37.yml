@@ -1,10 +1,10 @@
 
 # To use this file::
-#  conda env create -f garden.yml
+#  conda env create -f garage37.yml
 # or::
-#  conda env update -f garden.yml --prune
+#  conda env update -f garage37.yml --prune
 
-name: garden
+name: garage37
 
 channels:
 - conda-forge
@@ -14,6 +14,9 @@ channels:
 dependencies:
 - python=3.7
 - pip
+
+- compilers
+- llvm-openmp  # [osx]
 
 - cython
 - bumpversion
@@ -64,7 +67,7 @@ dependencies:
 - krb5
 - shapely
 - osmnx
-- contextily>=1.0rc2
+# contextily>=1.0rc2  # develop
 - libiconv
 
 # User Interface
@@ -97,35 +100,34 @@ dependencies:
 - jupyterlab
 - notebook
 - nodejs
-#
+- jupytext
+
 ## Choice Modeling
-## develop::filez
+# develop::filez 
 - addict
-- larch
-#
+# develop::larch  
+
 ## Testing
 - pytest
 - nbval
 #
 ## Exploratory Modeling
-- tmip::emat
-- tmip::ema_workbench
+# develop::emat  
+# develop::ema_workbench  
 - salib
 
 ## Pip
 - pip:
   - xgboost
-  # - mapped
-  - transportation-tutorials
+  # develop::mapped
+  # develop::transportation-tutorials
 
 
 
 
 # After setting up and activating this environment, register with jupyter-notebook::
 #   python -m ipykernel install --user --name $CONDA_DEFAULT_ENV --display-name "$CONDA_DEFAULT_ENV"
-
-
-
+#
 # These may also be of interest for jupyter lab users:
 #
 # Avoid "JavaScript heap out of memory" errors during extension installation::
@@ -140,7 +142,7 @@ dependencies:
 # jupyter labextension install @jupyterlab/plotly-extension --no-build
 # jupyter labextension install @jupyterlab/geojson-extension --no-build
 # jupyter labextension install @jupyterlab/mathjax3-extension --no-build
-# jupyter labextension install plotlywidget@0.4.0 --no-build
+# jupyter labextension install plotlywidget --no-build
 # jupyter lab build
 #
 # Avoid "JavaScript heap out of memory" errors during extension installation::
