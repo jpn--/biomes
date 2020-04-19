@@ -42,6 +42,7 @@ dependencies:
 - sphinx_rtd_theme
 - nbsphinx
 - numpydoc
+- jupyter_sphinx
 
 # YAML Processing
 - yamllint
