@@ -7,38 +7,23 @@
 name: tt
 
 channels:
-- defaults
 - conda-forge
 - plotly
-- jpn
 
 dependencies:
 - python=3.7
 - pip
 
-# Security
-- defaults::openssl
-- defaults::certifi
-- defaults::ca-certificates
-
 # Math
-- defaults::numpy>=1.16
-- defaults::numpy-base
-- defaults::mkl
-- defaults::mkl_fft
-- defaults::mkl_random
-- defaults::blas
-- defaults::intel-openmp
-- defaults::pandas>=0.23.4
-- defaults::scipy>=1.2
-- jpn::ghalton>=0.6.1
+- numpy>=1.16
+- pandas>=0.23.4
+- scipy>=1.2
 
 # Networks
 - networkx>=2.2
 
 # YAML Processing
-- jpn::yamllint>=1.11
-- jpn::pathspec>=0.5.9
+- yamllint>=1.11
 
 # Data Storage and File Management
 - pytables=3.4.4
@@ -55,15 +40,15 @@ dependencies:
 - plotly::plotly-orca  # Plotly Static Image Export
 
 # Mapping
-- conda-forge::fiona>=1.7.11
-- conda-forge::gdal>=2.2.4
-- conda-forge::geopandas>=0.4
-- conda-forge::krb5>=1.16
-- conda-forge::shapely>=1.6.4
-- conda-forge::osmnx>=0.9
-- conda-forge::contextily
-- conda-forge::libiconv
-- conda-forge::fontconfig
+- fiona>=1.7.11
+- gdal>=2.2.4
+- geopandas>=0.4
+- krb5>=1.16
+- shapely>=1.6.4
+- osmnx>=0.9
+- contextily
+- libiconv
+- fontconfig
 
 # User Interface
 - ipywidgets>=7.2
@@ -79,7 +64,7 @@ dependencies:
 # HTML Compatibility
 - beautifulsoup4>=4.6
 - jinja2>=2.9.6  # for pandas styler
-- jpn::xmle
+- xmle
 - html5lib
 
 # Jupyter and IPython
@@ -87,18 +72,17 @@ dependencies:
 - nb_conda>=2.2.1
 - jupyterlab>=0.35.3
 - notebook>=5.7.2
-- conda-forge::nodejs
+- nodejs
 
 # Choice Modeling
-- jpn::filez
-- jpn::addict_yaml
-- jpn::larch>=5.1
+- larch>=5.1
 
 # Testing
 - pytest>=4.0.1
 
 - pip:
   - transportation_tutorials
+
 
 
 
