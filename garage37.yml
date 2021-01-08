@@ -67,7 +67,9 @@ dependencies:
 - krb5
 - shapely
 - osmnx
-# contextily>=1.0rc2  # develop
+- contextily>=1.0
+- mercantile
+- rasterio
 - libiconv
 
 # User Interface
@@ -115,6 +117,10 @@ dependencies:
 # develop::emat  
 # develop::ema_workbench  
 - salib
+
+# Torch
+- pytorch::pytorch
+- pytorch::torchvision
 
 ## Pip
 - pip:
