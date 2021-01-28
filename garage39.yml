@@ -1,8 +1,8 @@
 
 # To use this file::
-#  conda env create -f garage38.yml
+#  conda env create -f garage39.yml
 # or::
-#  conda env update -f garage38.yml --prune
+#  conda env update -f garage39.yml --prune
 
 name: garage39
 
@@ -63,14 +63,14 @@ dependencies:
 - matplotlib
 - seaborn
 - pydot
-- graphviz
+#- graphviz
 - plotly
-- plotly::python-kaleido  # Plotly Static Image Export
+#- plotly::python-kaleido  # Plotly Static Image Export
 - dash
 - dash-bootstrap-components
-- datashader
-- altair
-- jupyter-dash
+#- datashader
+#- altair
+#- jupyter-dash
 
 # Mapping
 - fiona
@@ -80,7 +80,7 @@ dependencies:
 - krb5
 - shapely
 - osmnx
-- contextily>=1.0rc2  # develop
+- contextily
 - libiconv
 - geopy
 - mercantile
@@ -118,32 +118,32 @@ dependencies:
 - nodejs
 - jupytext
 
-## Choice Modeling
-# develop::filez 
+### Choice Modeling
+## develop::filez 
 - addict
-# develop::larch  
-
-## Testing
+## develop::larch  
+#
+### Testing
 - pytest
 - nbval
 - pytest-regressions
-#
-## Exploratory Modeling
-# develop::emat  
-# develop::ema_workbench  
+##
+### Exploratory Modeling
+## develop::emat  
+## develop::ema_workbench  
 - salib
 - platypus-opt
-
-- pytorch::pytorch
-
-## Pip
-- pip:
-  - xgboost
-  # develop::mapped
-  # develop::transportation-tutorials
-
-
-
+#
+#- pytorch::pytorch
+#
+### Pip
+#- pip:
+#  - xgboost
+#  # develop::mapped
+#  # develop::transportation-tutorials
+#
+#
+#
 
 # After setting up and activating this environment, register with jupyter-notebook::
 #   python -m ipykernel install --user --name $CONDA_DEFAULT_ENV --display-name "$CONDA_DEFAULT_ENV"
