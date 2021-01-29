@@ -1,10 +1,10 @@
 
 # To use this file::
-#  conda env create -f garage39.yml
+#  conda env create -f garage38.yml
 # or::
-#  conda env update -f garage39.yml --prune
+#  conda env update -f garage38.yml --prune
 
-name: garage39
+name: garage38
 
 channels:
 - conda-forge
@@ -12,7 +12,7 @@ channels:
 - pytorch
 
 dependencies:
-- python=3.9
+- python=3.8
 - pip
 
 - compilers
@@ -33,7 +33,7 @@ dependencies:
 - scikit-learn
 - networkx>=2.2
 - statsmodels
-# numba # not ready for py39 yet
+- numba
 
 # Documentation
 - sphinx
@@ -69,9 +69,9 @@ dependencies:
 - python-kaleido  # Plotly Static Image Export
 - dash
 - dash-bootstrap-components
-# datashader  # numba not ready for py39 yet
-# altair
-# jupyter-dash
+- datashader
+- altair
+- jupyter-dash
 
 # Mapping
 - fiona
@@ -81,7 +81,7 @@ dependencies:
 - krb5
 - shapely
 - osmnx
-- contextily
+- contextily>=1.0rc2  # develop
 - libiconv
 - geopy
 - mercantile
@@ -108,7 +108,7 @@ dependencies:
 # HTML Compatibility
 - beautifulsoup4
 - jinja2  # for pandas styler
-# develop::xmle
+- xmle
 
 # Jupyter and IPython
 - ipykernel
@@ -119,32 +119,33 @@ dependencies:
 - nodejs
 - jupytext
 
-# Choice Modeling
+## Choice Modeling
 # develop::filez 
 - addict
 # develop::larch  
 
-# Testing
+## Testing
 - pytest
 - nbval
 - pytest-regressions
-
-### Exploratory Modeling
-## develop::emat  
-## develop::ema_workbench  
+- pyinstrument
+#
+## Exploratory Modeling
+# develop::emat  
+# develop::ema_workbench  
 - salib
 - platypus-opt
 
-#- pytorch::pytorch
-#
-### Pip
-#- pip:
-#  - xgboost
-#  # develop::mapped
-#  # develop::transportation-tutorials
-#
-#
-#
+- pytorch::pytorch
+
+## Pip
+- pip:
+  - xgboost
+  # develop::mapped
+  # develop::transportation-tutorials
+
+
+
 
 # After setting up and activating this environment, register with jupyter-notebook::
 #   python -m ipykernel install --user --name $CONDA_DEFAULT_ENV --display-name "$CONDA_DEFAULT_ENV"
