@@ -8,8 +8,6 @@ name: garage39
 
 channels:
 - conda-forge
-- plotly
-- pytorch
 
 dependencies:
 - python=3.9
@@ -29,11 +27,14 @@ dependencies:
 # Math
 - numpy
 - pandas
+- xarray
+- sparse
 - scipy
 - scikit-learn
 - networkx>=2.2
 - statsmodels
-# numba # not ready for py39 yet
+- tabulate
+- numba 
 
 # Documentation
 - sphinx
@@ -57,8 +58,10 @@ dependencies:
 - hdf5
 - appdirs
 - shortuuid
-# dirsync
 - pyarrow
+- zarr
+- filelock
+- git-lfs
 
 # Visualization
 - matplotlib
@@ -69,7 +72,7 @@ dependencies:
 - python-kaleido  # Plotly Static Image Export
 - dash
 - dash-bootstrap-components
-# datashader  # numba not ready for py39 yet
+- datashader  
 # altair
 # jupyter-dash
 
@@ -118,16 +121,22 @@ dependencies:
 - notebook
 - nodejs
 - jupytext
+- jedi==0.17.2  # https://github.com/ipython/ipython/issues/12740
 
 # Choice Modeling
-# develop::filez 
 - addict
 # develop::larch  
 
 # Testing
 - pytest
 - nbval
+- pytest-cov
 - pytest-regressions
+- pyinstrument
+- pycodestyle
+- autopep8
+- pycodestyle
+- coveralls
 
 ### Exploratory Modeling
 ## develop::emat  
@@ -135,8 +144,15 @@ dependencies:
 - salib
 - platypus-opt
 
-#- pytorch::pytorch
-#
+# Machine Learning
+- pytorch
+
+# amazon
+- boto3
+
+# github
+- gh
+
 ### Pip
 #- pip:
 #  - xgboost
