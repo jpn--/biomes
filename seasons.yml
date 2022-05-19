@@ -1,8 +1,8 @@
 
 # To use this file::
-#  mamba env create --file seasons.yml --name autumn21
+#  mamba env create --file seasons.yml --name spring22
 # or::
-#  mamba env update --file seasons.yml --name autumn21 --prune
+#  mamba env update --file seasons.yml --name spring22 --prune
 
 channels:
 - conda-forge
@@ -14,9 +14,13 @@ dependencies:
 
 - compilers
 - llvm-openmp  # [osx]
+- tbb
+- tbb-devel
 
 - cython
 - bumpversion
+- setuptools_scm
+- grayskull
 
 # Security
 - openssl
@@ -24,7 +28,7 @@ dependencies:
 - ca-certificates
 
 # Math
-- numpy>=1.21
+- numpy>=1.22
 - pandas
 - xarray
 - sparse
@@ -33,7 +37,7 @@ dependencies:
 - networkx>=2.2
 - statsmodels
 - tabulate
-- numba 
+- numba>=0.53
 
 # Documentation
 - sphinx>=4.2
@@ -51,6 +55,9 @@ dependencies:
 - sphinx-book-theme
 - jupyter-book
 - bump2version
+- nbmake
+- sphinx-argparse
+- sphinx-autosummary-accessors
 
 # YAML Processing
 - yamllint
@@ -69,6 +76,7 @@ dependencies:
 - gh
 - pre-commit
 - py7zr
+- ghp-import
 
 # Visualization
 - matplotlib
@@ -82,6 +90,8 @@ dependencies:
 - datashader  
 - altair
 - jupyter-dash
+- python-igraph
+- simwrapper
 
 # Mapping
 - fiona
@@ -96,11 +106,14 @@ dependencies:
 - geopy
 - mercantile
 - rasterio
+- libpysal
+- topojson
 
 # User Interface
 - tqdm
 - ipywidgets
 - rich
+- pypyr
 
 # Parallel Processing
 - joblib
@@ -138,6 +151,8 @@ dependencies:
 - nbval
 - pytest-cov
 - pytest-regressions
+- pytest-forked
+- pytest-xdist
 - pyinstrument
 - pycodestyle
 - autopep8
@@ -153,6 +168,7 @@ dependencies:
 # Machine Learning
 - pytorch  # depends on intel-openmp
 - xgboost
+- jax
 
 # amazon
 - boto3
@@ -167,7 +183,14 @@ dependencies:
 - dbfread
 - dbf
 - psycopg2
+- apsw
 
+# Lint
+- flake8
+- mccabe
+- pyflakes
+- pydocstyle
+- pylama
 
 - pyppmd
 - pyzstd
@@ -182,8 +205,7 @@ dependencies:
   - -e ../emat
   - -e ../larch-pytorch
   - -e ../activitysim
-  - -e ../sharrow_lite
-  - -e ../sharrow_pro
+  - -e ../sharrow
   - pines
 
   
